@@ -146,6 +146,8 @@ include:
   - .htaccess
   - _pages
   - _posts
+  - pages
+  - posts
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -267,16 +269,35 @@ compress_html:
     envs: development
 
 
-# Defaults
+---
+title: move-to.uk
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: single
+    author_profile: true
+    read_time: true
+    comments: 
+    share: true
+    related: true
+- scope:
+    path: ''
+    type: pages
+  values:
+    dir: rtl
+    layout: single
+    author_profile: true
+    read_time: true
+    comments: 
+    share: true
+    related: true
